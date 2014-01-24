@@ -1,4 +1,4 @@
-CS509-DESIGN-OF-SOFTWARE-SYSTEMS
+Design of Software Systems
 ================================
 
-Prepared for my class CS509
+For my class CS509
