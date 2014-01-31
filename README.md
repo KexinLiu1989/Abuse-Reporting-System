@@ -9,3 +9,4 @@ For my class CS509
 * Cheng Deng - IT - cdeng@wpi.edu
 * Sihao Chen - ECE - schen2@wpi.edu
 * Chao Ren - ECE - renchao96825@gmail.com
+* Guanxiong Liu - ECE - sylorbeijing@gmail.com
