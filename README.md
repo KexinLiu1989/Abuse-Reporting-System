@@ -8,3 +8,4 @@ For my class CS509
 * Kexin Liu - ECE - kliu2@wpi.edu
 * Cheng Deng - IT - cdeng@wpi.edu
 * Sihao Chen - ECE - schen2@wpi.edu
+* Guanxiong Liu - ECE - sylorbeijing@gmail.com
