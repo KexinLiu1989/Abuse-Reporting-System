@@ -8,3 +8,8 @@
 # IntelliJ Project #
 .idea/
 *.iml
+
+ROOT/
+docs/
+host-manager/
+manager/
