@@ -8,7 +8,13 @@
 # IntelliJ Project #
 .idea/
 *.iml
+*.isw
 
+# Maven
+target/**
+log/**
+
+# Tomcat7
 ROOT/
 docs/
 host-manager/
