@@ -19,3 +19,11 @@ ROOT/
 docs/
 host-manager/
 manager/
+
+
+#Hao's local folder
+Servers
+jfinal_demo
+RemoteSystemsTempFiles
+storm
+.metadata
