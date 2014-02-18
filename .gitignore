@@ -22,7 +22,7 @@ manager/
 
 #Hao's local folder
 Servers
-jfinal_demo
 RemoteSystemsTempFiles
-storm
 .metadata
+WebRoot\WEB-INF\classes
+"WebRoot\\WEB-INF\\classes/"
