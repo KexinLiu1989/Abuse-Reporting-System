@@ -10,3 +10,5 @@ Design of Software Systems
 * Guanxiong Liu - ECE - sylorbeijing@gmail.com  
 
 
+###About 
+1. We will use JFinal MVC framework to handle this project ([read more](https://github.com/zhouhao/Abuse-Reporting-System/wiki/Code-Implementation))     
