@@ -3,6 +3,7 @@ package DDS.config;
 import DDS.controller.HelloController;
 
 import com.jfinal.config.*;
+import com.jfinal.core.JFinal;
 import com.jfinal.render.ViewType;
 
 public class DDSConfig extends JFinalConfig{
@@ -30,8 +31,7 @@ public class DDSConfig extends JFinalConfig{
 	
 	
 	public static void main(String[] args) {
-		// TODO Auto-generated method stub
-
+		JFinal.start("WebRoot", 8080, "/", 5);
 	}
 
 }
