@@ -11,4 +11,4 @@ Design of Software Systems
 
 
 ###About 
-1. We will use JFinal MVC framework to handle this project ([read more](https://github.com/zhouhao/Abuse-Reporting-System/wiki/Code-Implementation))     
+1. We will use [JFinal MVC framework](http://git.oschina.net/jfinal/jfinal) to handle this project ([read more](https://github.com/zhouhao/Abuse-Reporting-System/wiki/Code-Implementation))     
