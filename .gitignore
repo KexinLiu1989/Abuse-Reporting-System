@@ -19,11 +19,3 @@ docs/
 host-manager/
 manager/
 
-.project
-
-#Hao's local folder
-Servers
-RemoteSystemsTempFiles
-.metadata
-WebRoot\WEB-INF\classes
-"WebRoot\\WEB-INF\\classes/"
