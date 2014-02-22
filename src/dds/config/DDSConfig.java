@@ -7,7 +7,7 @@ import dds.controller.UserController;
 import com.jfinal.core.JFinal;
 import com.jfinal.render.ViewType;
 import com.jfinal.config.Constants;
-import com.jfinal.config.Handlers;
+import com.jfinal.config.Handlers; 
 import com.jfinal.config.Interceptors;
 import com.jfinal.config.JFinalConfig;
 import com.jfinal.config.Plugins;
@@ -20,6 +20,7 @@ public class DDSConfig extends JFinalConfig{
 	public void configConstant(Constants me){
 		loadPropertyFile("DatabaseConnection.txt");
 		me.setDevMode(true);
+		me.setEncoding("utf-8"); // Default is utf-8
 		me.setViewType(ViewType.JSP);
 		me.setError404View("common/404.html");
 		me.setError500View("common/500.html");
