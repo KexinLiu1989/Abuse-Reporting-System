@@ -1,4 +1,4 @@
-package DDS.controller;
+package dds.controller;
 
 import com.jfinal.core.Controller;
 
