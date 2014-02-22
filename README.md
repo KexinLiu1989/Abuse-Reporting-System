@@ -9,7 +9,11 @@ Design of Software Systems
 * Chao Ren - ECE - renchao96825@gmail.com
 * Guanxiong Liu - ECE - sylorbeijing@gmail.com  
 
+###The architecture we want to achieve
+Front End: AngularJS       
+Back End: Java RESTful     
+
 
 ###About 
 1. We will use [JFinal MVC framework](http://git.oschina.net/jfinal/jfinal) to handle this project ([read more](https://github.com/zhouhao/Abuse-Reporting-System/wiki/Code-Implementation))     
-2. The instruction of how to install run this code:[How to run this web app in your own computer](https://github.com/zhouhao/Abuse-Reporting-System/wiki/How-to-run-this-web-app-in-your-own-computer)      
+2. The instruction of how to install run this code:[How to run this web app in your own computer](docs/HowToRunOnYourOwnComputer.MD)      
