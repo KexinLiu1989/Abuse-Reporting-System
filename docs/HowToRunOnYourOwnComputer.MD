@@ -7,7 +7,6 @@
 2. Open Eclipse, Open "File->Import->Git->Project from Git->Clone URI", then click "Next" and "Next" with default setting, until you "finish" it.    
 ![Step 1](images/importStep1.png)    
 
-
 ![Step 2](images/importStep2.png)
 
 The "URI" comes from GitHub page, you can find it here(different accounts have different URIs, just copy & paste it):   
@@ -16,7 +15,6 @@ The "URI" comes from GitHub page, you can find it here(different accounts have d
 ###Run it locally
 1. Right click project "cs509[Abuse-Reporting-System]", "Debug AS->Debug Configration", then following the images below:    
 ![Step 1](images/runStep1.png)    
-
 
 ![Step 2](images/runStep2.png)
 
@@ -27,3 +25,6 @@ The "URI" comes from GitHub page, you can find it here(different accounts have d
 
 4. The result is coming from the database:     
 ![Database](images/database.png)    
+
+
+###If you have any question, please contact me hzhou@wpi.edu, or add an issue for this project. I will reply it as soon as I see it.   
