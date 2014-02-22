@@ -19,4 +19,4 @@ host-manager/
 manager/
 
 #log file
-cs509.log
+*.log
