@@ -1,0 +1,4 @@
+jdbcUrl = jdbc:mysql://cs509.wpilife.org/dds_cs509?useUnicode=yes&characterEncoding=utf8&zeroDateTimeBehavior=convertToNull
+user = cs509
+password = CS5092014
+devMode = true
