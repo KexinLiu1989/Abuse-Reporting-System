@@ -26,5 +26,5 @@ The "URI" comes from GitHub page, you can find it here(different accounts have d
 4. The result is coming from the database:     
 ![Database](images/database.png)    
 
-
 ###If you have any question, please contact me hzhou@wpi.edu, or add an issue for this project. I will reply it as soon as I see it.   
+
