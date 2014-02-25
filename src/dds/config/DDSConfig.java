@@ -1,6 +1,7 @@
 package dds.config;
 
 import dds.common.User;
+import dds.controller.CommonController;
 import dds.controller.HelloController;
 import dds.controller.UserController;
 
@@ -27,7 +28,7 @@ public class DDSConfig extends JFinalConfig{
 	}
 	
 	public void configRoute(Routes me){
-		me.add("/", UserController.class);
+		me.add("/", CommonController.class);
 		me.add("/user", UserController.class);
 		me.add("/hello", HelloController.class);
 	}
@@ -49,8 +50,8 @@ public class DDSConfig extends JFinalConfig{
 	public void configHandler(Handlers me){
 		
 	}
-	
-	
+
+
 	public static void main(String[] args) {
 		JFinal.start("WebRoot", 80, "/", 5);
 	}
