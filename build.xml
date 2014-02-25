@@ -1,0 +1,32 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<project default="compile" basedir=".">
+    <property file="${basedir}/build.properties" />
+
+    <path id="compile.classpath">
+        <fileset dir="${basedir}/WebRoot/WEB-INF/lib" includes="**/*.jar" />
+    </path>
+    <path id="compile.sourcepath">
+        <pathelement location="${basedir}/src"/>
+    </path>
+    <path id="compile.resources">
+        <fileset dir="${basedir}/src" excludes="**/*.java" />
+    </path>
+
+    <target name="compile">
+        <property name="class.dir" value="${basedir}/WebRoot/WEB-INF/classes" />
+
+        <delete dir="${class.dir}" quiet="true" />
+        <mkdir dir="${class.dir}" />
+        <javac destdir="${class.dir}"
+               classpathref="compile.classpath"
+               debug="on" nowarn="true" deprecation="off"
+               includeantruntime="off">
+            <src refid="compile.sourcepath" />
+        </javac>
+        <copy todir="${class.dir}">
+            <path refid="compile.resources" />
+        </copy>
+    </target>
+
+</project>

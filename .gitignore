@@ -9,14 +9,17 @@
 *.iml
 *.isw
 
-# Maven
-target/**
-log/**
+# Maven #
+target/
+log/
 
-# Tomcat7
+# Tomcat7 #
 ROOT/
 host-manager/
 manager/
 
-#log file
+# log file #
 *.log
+
+# jar file #
+jetty-server-8.1.8.jar
