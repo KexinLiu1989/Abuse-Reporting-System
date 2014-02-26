@@ -1,6 +1,6 @@
 <div>
-    <h1>Hello {{yourName}}!</h1>
+    <h1><span ng-show="showHello">Hello</span> {{ helloData }}!</h1>
     <hr>
-    <label>Your Name:</label>
-    <input type="text" ng-model="yourName" placeholder="Enter a name here">
+    <label>Your String:</label>
+    <input type="text" ng-model="helloData" placeholder="Enter a string here">
 </div>
