@@ -4,7 +4,8 @@ require.config({
 		angularRoute: '../../bower_components/angular-route/angular-route',
 		angularMocks: '../../bower_components/angular-mocks/angular-mocks',
         bootstrap: '../../bower_components/bootstrap/dist/js/bootstrap.min',
-        jQuery: '../../bower_components/jquery/jquery.min'
+        jQuery: '../../bower_components/jquery/jquery.min',
+        toastr: '../../bower_components/toastr/toastr.min'
 	},
 	baseUrl: 'app/js',
 	shim: {

@@ -9,14 +9,18 @@
         "tests"
     ],
     "devDependencies": {
-        "angular": "~1.2.10",
-        "angular-animate": "1.2.10",
-        "angular-resource": "~1.2.10",
-        "angular-cookies": "~1.2.10",
-        "angular-sanitize": "~1.2.10",
-        "angular-route": "~1.2.10",
+        "angular": "~1.2.9",
+        "json3": "~3.2.6",
+        "es5-shim": "~2.3.0",
+        "jquery": "~1.10.2",
+        "angular-animate": "1.2.9",
+        "angular-resource": "~1.2.9",
+        "angular-cookies": "~1.2.9",
+        "angular-sanitize": "~1.2.9",
+        "angular-route": "~1.2.9",
+        "toastr": "2.0.1",
         "requirejs": "~2.1.8",
-        "bootstrap": "~3.1.1",
+        "bootstrap": "~3.1.0",
         "font-awesome": "~4.0.3"
     }
 }
