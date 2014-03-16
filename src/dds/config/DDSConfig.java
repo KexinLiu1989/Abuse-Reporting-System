@@ -22,7 +22,7 @@ public class DDSConfig extends JFinalConfig{
 		loadPropertyFile("DatabaseConnection.txt");
 		me.setDevMode(true);
 		me.setEncoding("utf-8"); // Default is utf-8
-		me.setViewType(ViewType.JSP);
+		//me.setViewType(ViewType.JSP);
 		me.setError404View("common/404.html");
 		me.setError500View("common/500.html");
 	}
@@ -53,7 +53,7 @@ public class DDSConfig extends JFinalConfig{
 
 
 	public static void main(String[] args) {
-		JFinal.start("WebRoot", 8888, "/", 5);
+		JFinal.start("WebRoot", 80, "/", 5);
 	}
 
 }
