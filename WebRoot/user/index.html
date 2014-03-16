@@ -1,0 +1,32 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="UTF-8">
+<title>User Test Index Page</title>
+</head>
+<body>
+	<div class="table_box">
+	<table class="list">
+		<tbody>
+			<tr>
+				<th width="4%">id</th>
+				<th width="35%">Name</th>
+				<th width="12%"></th>
+			</tr>
+			<#list users.getList() as x>
+			<tr>
+				<td style="text-align:left;">${x.user_id}</td>
+				<td style="text-align:left;">${x.user_name}</td>
+				<td style="text-align:left;">
+					&nbsp;&nbsp;<a href="/user/delete/${x.user_id}">Delete</a>
+					&nbsp;&nbsp;<a href="/user/edit/${x.user_id}">Edit</a>
+				</td>
+			</tr>
+			</#list>
+		</tbody>
+	</table>
+	<#include "_paginate.html" />
+	<@paginate currentPage=users.pageNumber totalPage=users.totalPage actionUrl="/user/" />
+</div>
+</body>
+</html>

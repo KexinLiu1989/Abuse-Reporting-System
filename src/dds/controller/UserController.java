@@ -3,6 +3,8 @@ package dds.controller;
 
 import com.jfinal.aop.Before;
 import com.jfinal.core.Controller;
+import com.jfinal.ext.interceptor.Restful;
+import com.jfinal.plugin.activerecord.Page;
 
 import dds.common.User;
 import dds.interceptor.UserInterceptor;
@@ -12,15 +14,24 @@ import dds.interceptor.UserInterceptor;
  * Note: Real SQL Queries should be in Models, currently, I just do it for test
  */
 @Before(UserInterceptor.class)
+//@Before({UserInterceptor.class , Restful.class})
 public class UserController extends Controller {
 	public void index() {
 		setAttr("users", User.dao.paginate(getParaToInt(0, 1), 10, "select *", "from user"));
-		renderJson();
+		//renderJson();
+		/*
+		Page<User> page =  User.dao.paginate(getParaToInt(0, 1), 10, "select *", "from user"); 
+		for(User user : page.getList()){
+			System.out.println(user.get("user_id"));
+		}
+		*/
+		render("index.html");
 	}
 	
 	public void id(){
 		setAttr("users", User.dao.getUserRecordByID(getParaToInt()));
 		renderJson();
+		
 		/* Very little difference between these two ways  */
 		//User user = User.dao.getUserRecordByID(getParaToInt());
 		//renderJson(user);
