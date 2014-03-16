@@ -27,3 +27,6 @@ WebRoot/WEB-INF/lib/jetty-server-8.1.8.jar
 # Bower Components #
 WebRoot/bower_components
 node_modules
+
+WebRoot/WEB-INF/classes
+cs509.log
