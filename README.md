@@ -62,7 +62,7 @@ This configuration uses NON-MINIFIED web content during development.
 * [JFinal MVC framework](http://git.oschina.net/jfinal/jfinal)
 
 ### Credits
-* Hao Zhou - CS- zhouhao@wpilife.org
+* Hao Zhou - CS - royhzhou@gmail.com       
 * Kexin Liu - ECE - kliu2@wpi.edu
 * Cheng Deng [Github](https://github.com/cdeng)
 * Sihao Chen - ECE - schen2@wpi.edu  
