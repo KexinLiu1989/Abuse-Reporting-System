@@ -14,6 +14,10 @@ The client application is built using a combination technologies: jFinal, Git, A
 Git is required for pulling down source.
 
  - Download and install Git.  Git can be found at <a href="http://git-scm.com/" target="_blank">http://git-scm.com/</a>
+ 
+NPM is required for installing bower.
+
+ - Download and install NPM.  NPM can be found at <a href="http://nodejs.org/" target="_blank">http://nodejs.org/</a>
 
 ### Build
 
@@ -21,7 +25,11 @@ Git is required for pulling down source.
 
  - Using Command Prompt or Terminal, navigate to the project's root directory.
 
- **It is important to run bower relative to its respective configuration file which is bower.json.
+ **It is important to install and run bower relative to its respective configuration file which is bower.json.
+ 
+  - Install bower which depends on Node and npm.  It's installed globally using npm.
+  
+  	 > npm install -g bower
 
   - Install project external JavaScript dependencies using Bower.  Bower reads the bower.json in it's current context path to determine which dependencies are required.
 
