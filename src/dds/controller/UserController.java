@@ -3,8 +3,6 @@ package dds.controller;
 
 import com.jfinal.aop.Before;
 import com.jfinal.core.Controller;
-import com.jfinal.ext.interceptor.Restful;
-import com.jfinal.plugin.activerecord.Page;
 
 import dds.common.User;
 import dds.interceptor.UserInterceptor;
@@ -25,7 +23,7 @@ public class UserController extends Controller {
 			System.out.println(user.get("user_id"));
 		}
 		*/
-		render("index.html");
+		//render("index.html");
 	}
 	
 	public void id(){

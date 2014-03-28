@@ -15,15 +15,15 @@
 			</#if>
 			
 			<#if (currentPage == 1)>
-				<span class="disabled prev_page">上页</span>
+				<span class="disabled prev_page">Prev</span>
 			<#else>
-				<a href="${actionUrl}#{currentPage - 1}${urlParas!}" class="prev_page">上页</a>
+				<a href="${actionUrl}#{currentPage - 1}${urlParas!}" class="prev_page">Prev</a>
 			</#if>
 			
 			<#if (currentPage > 8)>
 				<a href="${actionUrl}#{1}${urlParas!}">#{1}</a>
 				<a href="${actionUrl}#{2}${urlParas!}">#{2}</a>
-				<span class="gap">…</span>
+				<span class="gap">HELL<span>
 			</#if>
 			
 			<#list startPage..endPage as i>
@@ -35,15 +35,15 @@
 			</#list>
 			
 			<#if ((totalPage - currentPage) >= 8)>
-				<span class="gap">…</span>
+				<span class="gap">HELO</span>
 				<a href="${actionUrl}#{totalPage - 1}${urlParas!}">#{totalPage - 1}</a>
 				<a href="${actionUrl}#{totalPage}${urlParas!}">#{totalPage}</a>
 			</#if>
 			
 			<#if (currentPage == totalPage)>
-				<span class="disabled next_page">下页</span>
+				<span class="disabled next_page">Next</span>
 			<#else>
-				<a href="${actionUrl}#{currentPage + 1}${urlParas!}" class="next_page" rel="next">下页</a>
+				<a href="${actionUrl}#{currentPage + 1}${urlParas!}" class="next_page" rel="next">Next</a>
 			</#if>
 	</div>
 </#macro>
