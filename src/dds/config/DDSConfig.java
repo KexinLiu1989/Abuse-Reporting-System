@@ -40,7 +40,7 @@ public class DDSConfig extends JFinalConfig{
 		// Configure ActiveRecord 
 		ActiveRecordPlugin arp = new ActiveRecordPlugin(c3p0Plugin);
 		me.add(arp);
-		arp.addMapping("user", "user_id", User.class);	// Table Mapping
+		arp.addMapping("user", "id", User.class);	// Table Mapping
 	}
 	
 	public void configInterceptor(Interceptors me){
