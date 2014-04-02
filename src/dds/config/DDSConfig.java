@@ -1,6 +1,7 @@
 package dds.config;
 
-import dds.common.User;
+import dds.common.AbstractUser;
+import dds.common.Supervisor;
 import dds.controller.CommonController;
 import dds.controller.HelloController;
 import dds.controller.UserController;
@@ -40,7 +41,8 @@ public class DDSConfig extends JFinalConfig{
 		// Configure ActiveRecord 
 		ActiveRecordPlugin arp = new ActiveRecordPlugin(c3p0Plugin);
 		me.add(arp);
-		arp.addMapping("user", "id", User.class);	// Table Mapping
+		arp.addMapping("user", "id", AbstractUser.class);	// Table Mapping
+		arp.addMapping("user", "id", Supervisor.class);	// Table Mapping
 	}
 	
 	public void configInterceptor(Interceptors me){

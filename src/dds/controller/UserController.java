@@ -4,7 +4,6 @@ package dds.controller;
 import com.jfinal.aop.Before;
 import com.jfinal.core.Controller;
 
-import dds.common.User;
 import dds.interceptor.UserInterceptor;
 
 /**
@@ -40,7 +39,7 @@ public class UserController extends Controller {
 	}
 	
 	public void save() {
-		getModel(User.class).save();
+		//getModel(User.class).save();
 		redirect("/user");
 	}
 	
@@ -49,7 +48,7 @@ public class UserController extends Controller {
 	}
 	
 	public void update() {
-		getModel(User.class).update();
+		//getModel(User.class).update();
 		redirect("/user");
 	}
 	

@@ -9,7 +9,9 @@ import com.jfinal.plugin.activerecord.Record;
  * User model.
  */
 @SuppressWarnings("serial")
-public abstract class User extends Model<User> {
+public abstract class AbstractUser extends Model<AbstractUser> {
+	//public static final AbstractUser dao = new AbstractUser();
+	/*
 	private int id;
 	private String username;
 	private String firstname;
@@ -81,6 +83,7 @@ public abstract class User extends Model<User> {
 	public void setDob(Date dob) {
 		this.dob = dob;
 	}
+	
 	@Override
 	public String toString() {
 		return "User [id=" + id + ", username=" + username + ", firstname="
@@ -89,10 +92,10 @@ public abstract class User extends Model<User> {
 				+ password + ", role=" + role + ", dob=" + dob + "]";
 	}
 	
-
+	 */
 	
 	
-	//public static final User dao = new User();
+	
 	
 	//public User getUserRecordByID(int user_id){
 		//return dao.findById(user_id);

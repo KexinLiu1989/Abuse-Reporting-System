@@ -1,10 +1,16 @@
 package dds.common;
 
-@SuppressWarnings("serial")
-public class Supervisor extends User {
+import com.jfinal.plugin.activerecord.Page;
 
+@SuppressWarnings("serial")
+public class Supervisor extends AbstractUser {
+	public static final Supervisor dao = new Supervisor();
+	
 	public static void main(String[] args) {
-		// TODO Auto-generated method stub
+		
+		AbstractUser supervisor =  Supervisor.dao.findById(1); 
+		
+		System.out.println(supervisor.get("user_id"));
 
 	}
 
