@@ -22,7 +22,7 @@ public class UserController extends Controller {
 		/*
 		Page<User> page =  User.dao.paginate(getParaToInt(0, 1), 10, "select *", "from user"); 
 		for(User user : page.getList()){
-			System.out.println(user.get("user_id"));
+			System.out.println(user.get("id"));
 		}
 		*/
 		render("index.html");
