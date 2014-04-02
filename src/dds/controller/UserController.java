@@ -15,7 +15,7 @@ import dds.interceptor.UserInterceptor;
 //@Before({UserInterceptor.class , Restful.class})
 public class UserController extends Controller {
 	public void index() {
-		setAttr("users", User.dao.paginate(getParaToInt(0, 1), 10, "select *", "from user"));
+	//	setAttr("users", User.dao.paginate(getParaToInt(0, 1), 10, "select *", "from user"));
 		//renderJson();
 		/*
 		Page<User> page =  User.dao.paginate(getParaToInt(0, 1), 10, "select *", "from user"); 
@@ -27,7 +27,7 @@ public class UserController extends Controller {
 	}
 	
 	public void id(){
-		setAttr("users", User.dao.getUserRecordByID(getParaToInt()));
+	//	setAttr("users", User.dao.getUserRecordByID(getParaToInt()));
 		renderJson();
 		
 		/* Very little difference between these two ways  */
@@ -45,7 +45,7 @@ public class UserController extends Controller {
 	}
 	
 	public void edit() {
-		setAttr("user", User.dao.findById(getParaToInt()));
+	//	setAttr("user", User.dao.findById(getParaToInt()));
 	}
 	
 	public void update() {
@@ -54,7 +54,7 @@ public class UserController extends Controller {
 	}
 	
 	public void delete() {
-		User.dao.deleteById(getParaToInt());
+	//	User.dao.deleteById(getParaToInt());
 		redirect("/user");
 	}
 }
