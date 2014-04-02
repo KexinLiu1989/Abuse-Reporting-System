@@ -1,7 +1,7 @@
 package dds.config;
 
-import dds.common.AbstractUser;
-import dds.common.Supervisor;
+import dds.model.AbstractUser;
+import dds.model.Supervisor;
 import dds.controller.CommonController;
 import dds.controller.HelloController;
 import dds.controller.UserController;
@@ -20,7 +20,6 @@ import com.jfinal.plugin.c3p0.C3p0Plugin;
 public class DDSConfig extends JFinalConfig{
 
 	public void configConstant(Constants me){
-		loadPropertyFile("DatabaseConnection.txt");
 		me.setDevMode(true);
 		me.setEncoding("utf-8"); // Default is utf-8
 		//me.setViewType(ViewType.JSP);
@@ -35,11 +34,17 @@ public class DDSConfig extends JFinalConfig{
 	}
 	public void configPlugin(Plugins me){
 		// Configure C3p0 Database connection pool
-		C3p0Plugin c3p0Plugin = new C3p0Plugin(getProperty("jdbcUrl"), getProperty("user"), getProperty("password").trim());
+		C3p0Plugin c3p0Plugin = new C3p0Plugin(
+										Const.DEV_JDBC_URL, 
+										Const.DEV_USER, 
+										Const.DEV_PASSWORD );
 		me.add(c3p0Plugin);
 				
 		// Configure ActiveRecord 
 		ActiveRecordPlugin arp = new ActiveRecordPlugin(c3p0Plugin);
+		
+		arp.setShowSql(true);
+		
 		me.add(arp);
 		arp.addMapping("user", "id", AbstractUser.class);	// Table Mapping
 		arp.addMapping("user", "id", Supervisor.class);	// Table Mapping

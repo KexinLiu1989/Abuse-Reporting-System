@@ -4,13 +4,13 @@ package dds.controller;
 import com.jfinal.aop.Before;
 import com.jfinal.core.Controller;
 
-import dds.interceptor.UserInterceptor;
+import dds.interceptor.LoginInterceptor;
 
 /**
  * UserController
  * Note: Real SQL Queries should be in Models, currently, I just do it for test
  */
-@Before(UserInterceptor.class)
+@Before(LoginInterceptor.class)
 //@Before({UserInterceptor.class , Restful.class})
 public class UserController extends Controller {
 	public void index() {

@@ -1,4 +1,4 @@
-package dds.common;
+package dds.model;
 
 public class Role {
 

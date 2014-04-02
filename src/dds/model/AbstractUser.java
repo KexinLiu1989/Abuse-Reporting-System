@@ -1,4 +1,4 @@
-package dds.common;
+package dds.model;
 
 import java.util.Date;
 
