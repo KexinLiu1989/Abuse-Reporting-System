@@ -1,13 +1,11 @@
 package dds.config;
 
-import dds.model.AbstractUser;
-import dds.model.Supervisor;
+import dds.model.User;
 import dds.controller.CommonController;
 import dds.controller.HelloController;
 import dds.controller.UserController;
 
 import com.jfinal.core.JFinal;
-import com.jfinal.render.ViewType;
 import com.jfinal.config.Constants;
 import com.jfinal.config.Handlers; 
 import com.jfinal.config.Interceptors;
@@ -22,7 +20,6 @@ public class DDSConfig extends JFinalConfig{
 	public void configConstant(Constants me){
 		me.setDevMode(true);
 		me.setEncoding("utf-8"); // Default is utf-8
-		//me.setViewType(ViewType.JSP);
 		me.setError404View("common/404.html");
 		me.setError500View("common/500.html");
 	}
@@ -46,8 +43,8 @@ public class DDSConfig extends JFinalConfig{
 		arp.setShowSql(true);
 		
 		me.add(arp);
-		arp.addMapping("user", "id", AbstractUser.class);	// Table Mapping
-		arp.addMapping("user", "id", Supervisor.class);	// Table Mapping
+		arp.addMapping("user", "id", User.class);	// Table Mapping
+
 	}
 	
 	public void configInterceptor(Interceptors me){
