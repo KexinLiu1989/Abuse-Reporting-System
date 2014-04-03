@@ -2,8 +2,11 @@ package dds.model;
 
 import dds.ext.jfinal.Model;
 import com.jfinal.plugin.activerecord.Record;
+import com.jfinal.plugin.ehcache.CacheKit;
 
 /**
+ * Author: Hao Zhou
+ * Date: 04-02-2014
  * User model.
  */
 @SuppressWarnings("serial")
@@ -16,10 +19,5 @@ public class User extends Model<User> {
         super(USER_CACHE);
     }
 	
-	//public User getUserRecordByID(int user_id){
-		//return dao.findById(user_id);
-	//}
-	
-
 
 }

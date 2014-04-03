@@ -47,13 +47,9 @@ public class DDSConfig extends JFinalConfig{
 
 	}
 	
-	public void configInterceptor(Interceptors me){
-		
-	}
+	public void configInterceptor(Interceptors me){	}
 	
-	public void configHandler(Handlers me){
-		
-	}
+	public void configHandler(Handlers me){ }
 
 
 	public static void main(String[] args) {
