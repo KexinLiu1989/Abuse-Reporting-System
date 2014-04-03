@@ -10,7 +10,9 @@ import java.util.List;
  * Created with IntelliJ IDEA.
  * Author: StevenChow
  * Date: 13-5-18
+ * Modified by Hao Zhou @ 04-02-2014
  */
+@SuppressWarnings({ "serial", "rawtypes" })
 public class Model<M extends com.jfinal.plugin.activerecord.Model> extends com.jfinal.plugin.activerecord.Model<M> {
     private String cacheNameForModel;
 
@@ -28,7 +30,8 @@ public class Model<M extends com.jfinal.plugin.activerecord.Model> extends com.j
         return page;
     }
 
-    public M loadModel(int id) {
+    @SuppressWarnings("unchecked")
+	public M loadModel(int id) {
         final int ID = id;
         return (M)CacheKit.get(cacheNameForModel, ID, new IDataLoader() {
             @Override

@@ -2,6 +2,7 @@ package dds.kit;
 
 import com.jfinal.kit.StringKit;
 import com.jfinal.plugin.activerecord.Model;
+
 import org.jsoup.Jsoup;
 import org.jsoup.safety.Whitelist;
 
@@ -25,7 +26,8 @@ public class HtmlTagKit {
 //        return content;
 //    }
 
-    public static void processHtmlSpecialTag(Model model, String... attrNames){
+    @SuppressWarnings("rawtypes")
+	public static void processHtmlSpecialTag(Model model, String... attrNames){
         for (String attrName : attrNames) {
             String content = model.getStr(attrName);
             model.set(attrName, processHtmlSpecialTag(content));
@@ -39,7 +41,8 @@ public class HtmlTagKit {
         return null;
     }
 
-    public static void processHtmlXSSTag(Model model, String... attrNames){
+    @SuppressWarnings("rawtypes")
+	public static void processHtmlXSSTag(Model model, String... attrNames){
         for (String attrName : attrNames) {
             String content = model.getStr(attrName);
             if(StringKit.notBlank(content)){

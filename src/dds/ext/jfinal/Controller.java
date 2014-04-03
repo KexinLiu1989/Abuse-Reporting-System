@@ -20,7 +20,8 @@ public class Controller extends com.jfinal.core.Controller{
         return parasMap;
     }
 
-    public <M extends Model> M getModel(Class<M> modelClass, String... paras){
+    @SuppressWarnings({ "rawtypes", "unchecked" })
+	public <M extends Model> M getModel(Class<M> modelClass, String... paras){
         Model<M> model = super.getModel(modelClass);
         String[] paraArray = new String[paras.length];
         for (int i = 0; i < paras.length; i++) {

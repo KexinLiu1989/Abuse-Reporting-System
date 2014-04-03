@@ -1,5 +1,7 @@
 package dds.controller;
 
+import dds.model.User;
+import dds.validator.LoginValidator;
 
 import com.jfinal.aop.Before;
 import com.jfinal.core.Controller;
@@ -10,8 +12,7 @@ import dds.interceptor.LoginInterceptor;
  * UserController
  * Note: Real SQL Queries should be in Models, currently, I just do it for test
  */
-@Before(LoginInterceptor.class)
-//@Before({UserInterceptor.class , Restful.class})
+//@Before(LoginInterceptor.class)
 public class UserController extends Controller {
 	public void index() {
 	//	setAttr("users", User.dao.paginate(getParaToInt(0, 1), 10, "select *", "from user"));
@@ -56,6 +57,30 @@ public class UserController extends Controller {
 	//	User.dao.deleteById(getParaToInt());
 		redirect("/user");
 	}
+	
+	@Before(LoginValidator.class)
+    public void login(){
+        String email = getPara("email");
+        String password = getPara("password");
+        User user = User.dao.getByEmailAndPassword(email, password);
+        if (user != null){
+            //String bbsID = email + Const.BBS_ID_SEPARATOR + password;
+            //setCookie("bbsID", bbsID, 3600*24*30);
+            setSessionAttr("user", user);
+            setSessionAttr("userID", user.get("id"));
+            redirect("/");
+        }else{
+            setAttr("msg", "Username or password error");
+            render("/user/login.html");
+        }
+    }
+
+    public void logout(){
+        removeSessionAttr("user");
+        removeSessionAttr("userID");
+        removeCookie("bbsID");
+        redirect("/");
+    }
 }
 
 

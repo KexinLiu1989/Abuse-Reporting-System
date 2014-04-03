@@ -5,18 +5,17 @@ import com.jfinal.plugin.activerecord.Page;
 import com.jfinal.plugin.ehcache.CacheKit;
 import com.jfinal.plugin.ehcache.IDataLoader;
 
-import java.util.ArrayList;
-import java.util.HashMap;
 import java.util.List;
-import java.util.Map;
+
 
 /**
  * Created with IntelliJ IDEA.
  * Author: StevenChow
  * Date: 13-5-18
  */
+@SuppressWarnings({ "rawtypes", "unchecked" })
 public class ModelKit {
-    private Model dao;
+	private Model dao;
     private String cacheNameForOneModel;
 
     public ModelKit(Model dao, String cacheNameForOneModel){
