@@ -5,7 +5,8 @@ require.config({
 		angularMocks: '../../bower_components/angular-mocks/angular-mocks',
         bootstrap: '../../bower_components/bootstrap/dist/js/bootstrap.min',
         jQuery: '../../bower_components/jquery/jquery.min',
-        toastr: '../../bower_components/toastr/toastr.min'
+        toastr: '../../bower_components/toastr/toastr.min',
+        ngTable: '../../bower_components/ng-table/ng-table'
 	},
 	baseUrl: 'app/js',
 	shim: {
@@ -15,7 +16,8 @@ require.config({
 			deps:['angular'],
 			'exports':'angular.mock'
 		},
-        'bootstrap': ['jQuery']
+        'bootstrap': ['jQuery'],
+        'ng-table': ['jQuery']
 	},
 	priority: [
 		"angular"
