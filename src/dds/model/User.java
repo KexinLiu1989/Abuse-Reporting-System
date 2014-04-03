@@ -3,7 +3,6 @@ package dds.model;
 import java.security.NoSuchAlgorithmException;
 import java.util.Date;
 
-import dds.config.Const;
 import dds.ext.jfinal.Model;
 import dds.kit.HtmlTagKit;
 
@@ -41,7 +40,7 @@ public class User extends Model<User> {
 		this.save();
 	}
 	public void myUpdate() {
-		HtmlTagKit.processHtmlSpecialTag(this, "username", "headImg", "blogUrl", "feeling");
+		HtmlTagKit.processHtmlSpecialTag(this, "username", "firstname", "lastname");
 		this.update();
 		removeThisCache(this.getInt("id"));
 	}
@@ -66,6 +65,7 @@ public class User extends Model<User> {
 
 	/* private */
 	private String getMD5(byte[] src){
+		
 		StringBuffer sb=new StringBuffer();
 		try {
 			java.security.MessageDigest md=java.security.MessageDigest.getInstance("MD5");

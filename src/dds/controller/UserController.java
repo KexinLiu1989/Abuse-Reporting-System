@@ -15,8 +15,10 @@ import dds.interceptor.LoginInterceptor;
 //@Before(LoginInterceptor.class)
 public class UserController extends Controller {
 	public void index() {
-	//	setAttr("users", User.dao.paginate(getParaToInt(0, 1), 10, "select *", "from user"));
+		//setAttr("users", User.dao.paginate(getParaToInt(0, 1), 10, "select *", "from user"));
 		//renderJson();
+		User user = User.dao.findById(1);
+		renderJson(user);
 		/*
 		Page<User> page =  User.dao.paginate(getParaToInt(0, 1), 10, "select *", "from user"); 
 		for(User user : page.getList()){
@@ -68,6 +70,7 @@ public class UserController extends Controller {
             //setCookie("bbsID", bbsID, 3600*24*30);
             setSessionAttr("user", user);
             setSessionAttr("userID", user.get("id"));
+            //System.out.println(getSessionAttr("userID"));
             redirect("/");
         }else{
             setAttr("msg", "Username or password error");
