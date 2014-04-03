@@ -1,3 +1,4 @@
+[![Stories in Ready](https://badge.waffle.io/zhouhao/abuse-reporting-system.png?label=ready&title=Ready)](https://waffle.io/zhouhao/abuse-reporting-system)
 #Abuse Reporting System
 ================================
 
