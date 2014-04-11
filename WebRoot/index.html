@@ -7,6 +7,7 @@
 		<link rel="stylesheet" type="text/css" media="all" href="app/css/main.css" />
         <link rel="stylesheet" type="text/css" media="all" href="app/css/bootstrap.min.css" />
         <link rel="stylesheet" type="text/css" media="all" href="bower_components/font-awesome/css/font-awesome.min.css" />
+        <link rel="stylesheet" type="text/css" media="all" href="bower_components/ng-table/ng-table.css" />
 	</head>
 	<body >
         <!-- Fixed navbar -->
@@ -25,6 +26,8 @@
                         <li ng-class="{active: location.path() == '/createReport'}"><a href="#/createReport">Add Report</a></li>
                         <li ng-class="{active: location.path() == '/reportList'}"><a href="#/reportList">Report List</a></li>
                         <li ng-class="{active: location.path() == '/user'}"><a href="#/user">User</a></li>
+                    </ul>
+                    <ul class="nav navbar-nav navbar-right">
                         <li ng-class="{active: location.path() == '/login'}"><a href="#/login">Login</a></li>
                     </ul>
                 </div><!--/.nav-collapse -->
@@ -35,7 +38,8 @@
         </div>
         <div id="footer">
             <div class="container">
-                <p class="text-muted credit">This is a <a href="https://github.com/zhouhao/Abuse-Reporting-System" title="Github project" target="_blank">Github</a> Project.  {{ 'Current version is v%VERSION%.' | interpolate }}</p>
+                <p class="text-muted credit">This is a <a href="https://github.com/zhouhao/Abuse-Reporting-System" title="Github project" target="_blank">Github</a> Project.
+                    {{ 'Current version is v%VERSION%.' | interpolate }} <span class="pull-right">&copy; 2014 Worcester Polytechnic Institute</span></p>
             </div>
         </div>
 		<script data-main="app/js/main" src="bower_components/requirejs/require.js"></script>

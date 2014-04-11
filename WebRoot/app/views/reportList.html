@@ -1,4 +1,18 @@
 <div>
     <h1>Report List</h1>
     <hr>
+    <div>
+        <table ng-table="tableParams" show-filter="true" class="table ng-table-rowselected">
+            <tr ng-repeat="user in $data"
+                ng-click="user.$selected = !user.$selected; changeSelection(user)"
+                ng-class="{'active': user.$selected}">
+                <td data-title="'Name'" header-class="text-left" sortable="'name'" filter="{ 'name': 'text' }">
+                    {{user.name}}
+                </td>
+                <td data-title="'Age'" header-class="text-right" class="text-right" sortable="'age'" filter="{ 'age': 'text' }">
+                    {{user.age}}
+                </td>
+            </tr>
+        </table>
+    </div>
 </div>

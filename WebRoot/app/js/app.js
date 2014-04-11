@@ -5,6 +5,7 @@ define([
 	'directives',
 	'controllers',
 	'angularRoute',
+    'ngTable'
 	], function (angular, filters, services, directives, controllers) {
 		'use strict';
 
@@ -13,6 +14,7 @@ define([
 			'myApp.controllers',
 			'myApp.filters',
 			'myApp.services',
-			'myApp.directives'
+			'myApp.directives',
+            'ngTable'
 		]);
 });

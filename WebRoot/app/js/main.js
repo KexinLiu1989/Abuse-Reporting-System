@@ -17,7 +17,7 @@ require.config({
 			'exports':'angular.mock'
 		},
         'bootstrap': ['jQuery'],
-        'ng-table': ['jQuery']
+        'ngTable': ['angular', 'jQuery']
 	},
 	priority: [
 		"angular"

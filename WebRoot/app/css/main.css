@@ -1,11 +1,33 @@
-/* Sticky footer styles
--------------------------------------------------- */
+/*
+* CS509 Abuse Reporting System CSS Template V.1.0
+* Copyright 2014, Worcester Polytechnic Institute
+* DATE: 04/10/2014
+
+
+1 - GLOBAL SETTINGS
+2 - STICKY FOOTER
+3 - HEADLINES
+4 - HEADLINES
+5 - LISTS
+6 - PANELS
+7 - HEADER & NAVIGATION
+8 - DASHBOARD PAGE
+9 - REPORT PAGE
+*/
+
+/*=================================================
+1 - GLOBAL SETTINGS
+=================================================*/
 
 html,
 body {
     height: 100%;
     /* The html and body elements cannot have any padding or margin. */
 }
+
+/*=================================================
+2 - STICKY FOOTER
+=================================================*/
 
 /* Wrapper for page content to push down footer */
 #wrap {
@@ -23,11 +45,6 @@ body {
     background-color: #f5f5f5;
 }
 
-
-/* Custom page CSS
--------------------------------------------------- */
-/* Not required for template or sticky footer method. */
-
 #wrap > .container {
     padding: 60px 15px 0;
 }
@@ -41,8 +58,10 @@ body {
     padding-right: 15px;
 }
 
-/* view 2 */
-.done-true {
-    text-decoration: line-through;
-    color: grey;
+/*=================================================
+3 - HEADLINES
+=================================================*/
+
+.login {
+    padding-top: 10%;
 }
