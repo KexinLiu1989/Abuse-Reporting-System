@@ -2,32 +2,289 @@
     <h1>Create Report</h1>
     <hr>
     <div>
+        <div class="alert alert-info"><small>Asterisk <strong>*</strong> indicates required field.</small></div>
+        <form name="reportForm" class="form-horizontal" ng-submit="submitForm()" novalidate>
 
-        <form name="userForm" ng-submit="submitForm()" novalidate>
+            <!-- Alleged Victim -->
+            <div class="reportSection">
+                <div class="col-md-6">
+                    <legend>Alleged Victim</legend>
+                    <div class="form-group" ng-class="{ 'has-error' : reportForm.victimName.$invalid && !reportForm.victimName.$pristine }">
+                        <label class="col-md-3 control-label">Name <abbr title="This is a required field."><strong>*</strong></abbr></label>
+                        <div class="col-md-9">
+                            <input type="text" name="victimName" class="form-control" placeholder="name" ng-model="report.victim.name" required>
+                            <p ng-show="reportForm.victimName.$invalid && !reportForm.victimName.$pristine" class="help-block">Victim's name is required.</p>
+                        </div>
+                    </div>
+                    <div class="form-group" ng-class="{ 'has-error' : reportForm.victimAddress.$invalid && !reportForm.victimAddress.$pristine }">
+                        <label class="col-md-3 control-label">Address</label>
+                        <div class="col-md-9">
+                            <input type="text" name="victimAddress" class="form-control" placeholder="address" ng-model="report.victim.address" required>
+                            <p ng-show="reportForm.victimAddress.$invalid && !reportForm.victimAddress.$pristine" class="help-block">Victim's address is required.</p>
+                        </div>
+                    </div>
+                    <div class="form-group" ng-class="{ 'has-error' : reportForm.victimPhone.$invalid && !reportForm.victimPhone.$pristine }">
+                        <label class="col-md-3 control-label">Telephone</label>
+                        <div class="col-md-7">
+                            <input type="text" name="victimPhone" class="form-control" ui-mask="(999) 999-9999" ng-model="report.victim.phone" required>
+                            <p ng-show="reportForm.victimPhone.$invalid && !reportForm.victimPhone.$pristine" class="help-block">Victim's phone is required.</p>
+                        </div>
+                    </div>
+                    <div class="form-group" ng-class="{ 'has-error' : reportForm.victimSex.$invalid && !reportForm.victimSex.$pristine }">
+                        <label class="col-md-3 control-label">Sex <abbr title="This is a required field."><strong>*</strong></abbr></label>
+                        <div class="col-md-9">
+                            <label class="radio-inline">
+                                <input type="radio" name="victimSex" ng-model="report.victim.sex" value="Male">
+                                Male
+                            </label>
+                            <label class="radio-inline">
+                                <input type="radio" name="victimSex" ng-model="report.victim.sex" value="Female">
+                                Female
+                            </label>
+                        </div>
+                    </div>
+                    <div class="form-group" ng-class="{ 'has-error' : reportForm.victimDOB.$invalid && !reportForm.victimDOB.$pristine }">
+                        <label class="col-md-3 control-label"><abbr title="Date of Birth">DOB</abbr></label>
+                        <div class="col-md-7">
+                            <input type="text" name="victimDOB" class="form-control" ui-mask="99/99/9999" ng-model="report.victim.dob" required>
+                            <p ng-show="reportForm.victimDOB.$invalid && !reportForm.victimDOB.$pristine" class="help-block">Victim's date of birth is required.</p>
+                        </div>
+                    </div>
+                    <div class="form-group" ng-class="{ 'has-error' : reportForm.victimMarital.$invalid && !reportForm.victimMarital.$pristine }">
+                        <label class="col-md-3 control-label">Marital Stat</label>
+                        <div class="col-md-7">
+                            <select name="victimMarital" class="form-control" ng-model="report.victim.marital">
+                                <option value="S">Single</option>
+                                <option value="M">Married</option>
+                                <option value="D">Divorced</option>
+                                <option value="W">Widowed</option>
+                                <option value="O">Other</option>
+                            </select>
+                        </div>
+                    </div>
+                </div>
 
-            <!-- NAME -->
-            <div class="form-group" ng-class="{ 'has-error' : userForm.name.$invalid && !userForm.name.$pristine }">
-                <label>Name</label>
-                <input type="text" name="name" class="form-control" ng-model="user.name" required>
-                <p ng-show="userForm.name.$invalid && !userForm.name.$pristine" class="help-block">You name is required.</p>
+                <div class="col-md-6">
+                    <legend>Alleged Abuser</legend>
+                    <div class="form-group" ng-class="{ 'has-error' : reportForm.abuserName.$invalid && !reportForm.abuserName.$pristine }">
+                        <label class="col-md-3 control-label">Name(s) <abbr title="This is a required field."><strong>*</strong></abbr></label>
+                        <div class="col-md-9">
+                            <input type="text" name="abuserName" class="form-control" placeholder="name" ng-model="report.abuser.name" required>
+                            <p ng-show="reportForm.abuserName.$invalid && !reportForm.abuserName.$pristine" class="help-block">Abuser's name(s) is required.</p>
+                        </div>
+                    </div>
+                    <div class="form-group" ng-class="{ 'has-error' : reportForm.abuserAddress.$invalid && !reportForm.abuserAddress.$pristine }">
+                        <label class="col-md-3 control-label">Address</label>
+                        <div class="col-md-9">
+                            <input type="text" name="abuserAddress" class="form-control" placeholder="address" ng-model="report.abuser.address" required>
+                            <p ng-show="reportForm.abuserAddress.$invalid && !reportForm.abuserAddress.$pristine" class="help-block">Abuser's home address is required.</p>
+                        </div>
+                    </div>
+                    <div class="form-group" ng-class="{ 'has-error' : reportForm.abuserRelation.$invalid && !reportForm.abuserRelation.$pristine }">
+                        <label class="col-md-3 control-label"><abbr title="Relationship to Victim">Relation</abbr></label>
+                        <div class="col-md-9">
+                            <input type="text" name="abuserRelation" class="form-control" placeholder="address" ng-model="report.abuser.relation" required>
+                            <p ng-show="reportForm.abuserRelation.$invalid && !reportForm.abuserRelation.$pristine" class="help-block">Abuser's relationship to victim is required.</p>
+                        </div>
+                    </div>
+                    <div class="form-group" ng-class="{ 'has-error' : reportForm.abuserSSN.$invalid && !reportForm.abuserSSN.$pristine }">
+                        <label class="col-md-3 control-label"><abbr title="Social Security Number">SSN #</abbr></label>
+                        <div class="col-md-7">
+                            <input type="text" name="abuserSSN" class="form-control" ui-mask="999-99-9999" ng-model="report.abuser.ssn" required>
+                            <p ng-show="reportForm.abuserSSN.$invalid && !reportForm.abuserSSN.$pristine" class="help-block">Abuser's SSN is required.</p>
+                        </div>
+                    </div>
+                    <div class="form-group" ng-class="{ 'has-error' : reportForm.abuserDOB.$invalid && !reportForm.abuserDOB.$pristine }">
+                        <label class="col-md-3 control-label"><abbr title="Date of Birth">DOB</abbr></label>
+                        <div class="col-md-7">
+                            <input type="text" name="abuserDOB" class="form-control" ui-mask="99/99/9999" ng-model="report.victim.dob" required>
+                            <p ng-show="reportForm.abuserDOB.$invalid && !reportForm.abuserDOB.$pristine" class="help-block">Abuser's date of birth is required.</p>
+                        </div>
+                    </div>
+                    <div class="form-group" ng-class="{ 'has-error' : reportForm.abuserPhone.$invalid && !reportForm.abuserPhone.$pristine }">
+                        <label class="col-md-3 control-label">Telephone</label>
+                        <div class="col-md-7">
+                            <input type="text" name="abuserPhone" class="form-control" ui-mask="(999) 999-9999" ng-model="report.abuser.phone" required>
+                            <p ng-show="reportForm.abuserPhone.$invalid && !reportForm.abuserPhone.$pristine" class="help-block">Victim's phone is required.</p>
+                        </div>
+                    </div>
+                </div>
             </div>
 
-            <!-- USERNAME -->
-            <div class="form-group" ng-class="{ 'has-error' : userForm.username.$invalid && !userForm.username.$pristine }">
-                <label>Username</label>
-                <input type="text" name="username" class="form-control" ng-model="user.username" ng-minlength="3" ng-maxlength="8">
-                <p ng-show="userForm.username.$error.minlength" class="help-block">Username is too short.</p>
-                <p ng-show="userForm.username.$error.maxlength" class="help-block">Username is too long.</p>
+            <div class="reportSection">
+                <div class="col-md-6">
+                    <legend>Communication Needs</legend>
+                    <div class="form-group" ng-class="{ 'has-error' : reportForm.comNeeds.$invalid && !reportForm.comNeeds.$pristine }">
+                        <label class="col-md-5 control-label">Communication Needs</label>
+                        <div class="col-md-5">
+                            <select name="comNeeds" class="form-control" ng-model="report.communication">
+                                <option value="T">TTY</option>
+                                <option value="I">Sign Interpreter</option>
+                                <option value="O">Other</option>
+                            </select>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="col-md-6">
+                    <legend>Frequency of Abuse</legend>
+                    <div class="form-group" ng-class="{ 'has-error' : reportForm.frequency.$invalid && !reportForm.frequency.$pristine }">
+                        <label class="col-md-5 control-label">Frequency of Abuse</label>
+                        <div class="col-md-5">
+                            <select name="frequency" class="form-control" ng-model="report.frequency">
+                                <option value="D">Daily</option>
+                                <option value="W">Weekly</option>
+                                <option value="E">Episodic</option>
+                                <option value="IS">Increasing</option>
+                                <option value="DS">Decreasing</option>
+                                <option value="CS">Constant</option>
+                                <option value="UN">Unknown</option>
+                            </select>
+                        </div>
+                    </div>
+                </div>
             </div>
 
-            <!-- EMAIL -->
-            <div class="form-group" ng-class="{ 'has-error' : userForm.email.$invalid && !userForm.email.$pristine }">
-                <label>Email</label>
-                <input type="email" name="email" class="form-control" ng-model="user.email">
-                <p ng-show="userForm.email.$invalid && !userForm.email.$pristine" class="help-block">Enter a valid email.</p>
+            <div class="reportSection">
+                <div class="col-md-6">
+                    <legend>Disability (Check as Apply)</legend>
+                    <div class="col-md-6">
+                        <div class="checkbox">
+                            <label>
+                                <input type="checkbox" name="checkboxes" value="retardation">
+                                Mental Retardation
+                            </label>
+                        </div>
+                        <div class="checkbox">
+                            <label>
+                                <input type="checkbox" name="checkboxes" value="mobility">
+                                Mobility
+                            </label>
+                        </div>
+                        <div class="checkbox">
+                            <label>
+                                <input type="checkbox" name="checkboxes" value="visual">
+                                Visual
+                            </label>
+                        </div>
+                        <div class="checkbox">
+                            <label>
+                                <input type="checkbox" name="checkboxes" value="palsy">
+                                Cerebral Palsy
+                            </label>
+                        </div>
+                        <div class="checkbox">
+                            <label>
+                                <input type="checkbox" name="checkboxes" value="seizures">
+                                Seizures
+                            </label>
+                        </div>
+                    </div>
+                    <div class="col-md-6">
+                        <div class="checkbox">
+                            <label>
+                                <input type="checkbox" name="checkboxes" value="illness">
+                                Mental Illness
+                            </label>
+                        </div>
+                        <div class="checkbox">
+                            <label>
+                                <input type="checkbox" name="checkboxes" value="injury">
+                                Head Injury
+                            </label>
+                        </div>
+                        <div class="checkbox">
+                            <label>
+                                <input type="checkbox" name="checkboxes" value="deaf">
+                                Deaf / Hard of Hearing
+                            </label>
+                        </div>
+                        <div class="checkbox">
+                            <label>
+                                <input type="checkbox" name="checkboxes" value="sclerosis">
+                                Multiple Sclerosis
+                            </label>
+                        </div>
+                        <div class="checkbox">
+                            <label>
+                                <input type="checkbox" name="checkboxes" value="other">
+                                Other
+                            </label>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="col-md-6">
+                    <legend>Currently Served By</legend>
+                    <div class="col-md-6">
+                        <div class="checkbox">
+                            <label>
+                                <input type="checkbox" name="checkboxes" value="deptMental">
+                                <abbr title="Department of Mental Health">Dept. of Mental Health</abbr>
+                            </label>
+                        </div>
+                        <div class="checkbox">
+                            <label>
+                                <input type="checkbox" name="checkboxes" value="deptDevelopmental">
+                                <abbr title="Department of Developmental Services">Dept. of Dev. Svcs.</abbr>
+                            </label>
+                        </div>
+                        <div class="checkbox">
+                            <label>
+                                <input type="checkbox" name="checkboxes" value="massRehab">
+                                <abbr title="Massachusetts Rehabilitation Commission">Mass. Rehab. Comm.</abbr>
+                            </label>
+                        </div>
+                        <div class="checkbox">
+                            <label>
+                                <input type="checkbox" name="checkboxes" value="deptCorrection">
+                                <abbr title="Department of Correction">Dept. of Correction</abbr>
+                            </label>
+                        </div>
+                        <div class="checkbox">
+                            <label>
+                                <input type="checkbox" name="checkboxes" value="deptPublic">
+                                <abbr title="Department of Public Health">Dept. of Public Health</abbr>
+                            </label>
+                        </div>
+                    </div>
+                    <div class="col-md-6">
+                        <div class="checkbox">
+                            <label>
+                                <input type="checkbox" name="checkboxes" value="massBlind">
+                                <abbr title="Massachusetts Commission for the Blind">Mass. Comm./Blind</abbr>
+                            </label>
+                        </div>
+                        <div class="checkbox">
+                            <label>
+                                <input type="checkbox" name="checkboxes" value="massDeaf">
+                                <abbr title="Massachusetts Commission for the Deaf & Hard of Hearing">Mass. Comm./Deaf/HH</abbr>
+                            </label>
+                        </div>
+                        <div class="checkbox">
+                            <label>
+                                <input type="checkbox" name="checkboxes" value="unknown">
+                                Unknown
+                            </label>
+                        </div>
+                        <div class="checkbox">
+                            <label>
+                                <input type="checkbox" name="checkboxes" value="other">
+                                Other
+                            </label>
+                        </div>
+                        <div class="checkbox">
+                            <label>
+                                <input type="checkbox" name="checkboxes" value="none">
+                                None
+                            </label>
+                        </div>
+                    </div>
+                </div>
             </div>
 
-            <button type="submit" class="btn btn-primary pull-right" ng-disabled="userForm.$invalid">Submit</button>
+
+            <button type="submit" class="btn btn-primary pull-right" ng-disabled="reportForm.$invalid">Submit</button>
 
         </form>
     </div>

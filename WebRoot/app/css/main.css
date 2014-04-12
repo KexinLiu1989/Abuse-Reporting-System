@@ -7,12 +7,6 @@
 1 - GLOBAL SETTINGS
 2 - STICKY FOOTER
 3 - HEADLINES
-4 - HEADLINES
-5 - LISTS
-6 - PANELS
-7 - HEADER & NAVIGATION
-8 - DASHBOARD PAGE
-9 - REPORT PAGE
 */
 
 /*=================================================
@@ -64,4 +58,12 @@ body {
 
 .login {
     padding-top: 10%;
+}
+
+/*=================================================
+3 - REPORT
+=================================================*/
+
+.reportSection .col-md-6 {
+    margin-bottom: 15px;
 }
