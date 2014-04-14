@@ -40,7 +40,7 @@
     </target>
 
     <target name="deploy" depends="compile,buildwar">
-        <copy file="ARS.war" todir="${tomcat.deploydir}" />
+        <copy file="ARS.war" todir="/var/lib/tomcat7/webapps" />
     </target>
 
 </project>
