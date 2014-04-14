@@ -30,17 +30,20 @@
     </target>
 
     <target name="buildwar">
-        <war basedir="${basedir}/WebRoot" destfile="ARS.war"
+        <war basedir="${basedir}/WebRoot" destfile="ars.war"
              webxml="${basedir}/WebRoot/WEB-INF/web.xml">
-            <exclude name="WEB-INF/**" />
-            <webinf dir="${basedir}/WebRoot/WEB-INF/">
-                <include name="**/*.jar" />
-            </webinf>
+            <classes dir="${basedir}/WebRoot/classes"/>
+            <lib dir="${basedir}/WebRoot/WEB-INF/lib"/>
         </war>
     </target>
 
     <target name="deploy" depends="compile,buildwar">
-        <copy file="ARS.war" todir="/var/lib/tomcat7/webapps" />
+        <copy file="ars.war" todir="/var/lib/tomcat7/webapps" />
+    </target>
+
+    <target name="clean">
+        <delete dir="classes" />
+        <delete file="*.war" />
     </target>
 
 </project>
