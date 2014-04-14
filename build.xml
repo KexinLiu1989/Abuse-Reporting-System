@@ -29,4 +29,18 @@
         </copy>
     </target>
 
+    <target name="buildwar">
+        <war basedir="${basedir}/dist/web" destfile="ARS.war"
+             webxml="${basedir}/dist/web/WEB-INF/web.xml">
+            <exclude name="WEB-INF/**" />
+            <webinf dir="${basedir}/dist/web/WEB-INF/">
+                <include name="**/*.jar" />
+            </webinf>
+        </war>
+    </target>
+
+    <target name="deploy" depends="compile,buildwar">
+        <copy file="ARS.war" todir="${tomcat.deploydir}" />
+    </target>
+
 </project>
