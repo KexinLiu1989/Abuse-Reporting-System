@@ -30,10 +30,10 @@
     </target>
 
     <target name="buildwar">
-        <war basedir="${basedir}/dist/web" destfile="ARS.war"
-             webxml="${basedir}/dist/web/WEB-INF/web.xml">
+        <war basedir="${basedir}/WebRoot" destfile="ARS.war"
+             webxml="${basedir}/WebRoot/WEB-INF/web.xml">
             <exclude name="WEB-INF/**" />
-            <webinf dir="${basedir}/dist/web/WEB-INF/">
+            <webinf dir="${basedir}/WebRoot/WEB-INF/">
                 <include name="**/*.jar" />
             </webinf>
         </war>
