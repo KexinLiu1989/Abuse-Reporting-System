@@ -66,8 +66,6 @@ public class UserController extends Controller {
         String password = getPara("password");
         User user = User.dao.getByEmailAndPassword(email, password);
         if (user != null){
-            //String bbsID = email + Const.BBS_ID_SEPARATOR + password;
-            //setCookie("bbsID", bbsID, 3600*24*30);
             setSessionAttr("user", user);
             setSessionAttr("userID", user.get("id"));
             //System.out.println(getSessionAttr("userID"));
