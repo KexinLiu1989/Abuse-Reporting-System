@@ -18,7 +18,7 @@
 				<td style="text-align:left;">${x.id}</td>
 				<td style="text-align:left;">${x.username}</td>
 				<td style="text-align:left;">
-					&nbsp;&nbsp;<a href="/user/delete/${x.id}">Delete</a>
+					&nbsp;&nbsp;<a href="/user/delete/${x.id}" onclick="javascript: return confirm('Sure to delete!');">Delete</a>
 					&nbsp;&nbsp;<a href="/user/edit/${x.id}">Edit</a>
 				</td>
 			</tr>
