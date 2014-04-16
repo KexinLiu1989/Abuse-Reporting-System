@@ -28,15 +28,6 @@ public class UserController extends Controller {
 		//render("index.html");
 	}
 	
-	public void id(){
-	//	setAttr("users", User.dao.getUserRecordByID(getParaToInt()));
-		renderJson();
-		
-		/* Very little difference between these two ways  */
-		//User user = User.dao.getUserRecordByID(getParaToInt());
-		//renderJson(user);
-	}
-	
 	public void add() {
 		
 	}
