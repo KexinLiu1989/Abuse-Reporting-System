@@ -36,7 +36,7 @@ public class User extends Model<User> {
 	public void mySave(){
 		HtmlTagKit.processHtmlSpecialTag(this, "username");
 		String password = getMD5(this.getStr("password").getBytes());
-		this.set("password", password).set("registDate", new Date());
+		this.set("password", password);
 		this.save();
 	}
 	public void myUpdate() {
