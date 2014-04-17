@@ -25,20 +25,19 @@ public class User extends Model<User> {
 	}
 
 	/* get */
-	public User getById(int id) {
-		return loadModel(id);
-	}
 	public User getByEmailAndPassword(String email, String password){
 		return dao.findFirst("select id, username, email, password from user where email=? and password=?", email, password);
 	}
 
+	
 	/* other */
 	public void mySave(){
 		HtmlTagKit.processHtmlSpecialTag(this, "username");
 		String password = getMD5(this.getStr("password").getBytes());
-		this.set("password", password).set("registDate", new Date());
+		this.set("password", password);
 		this.save();
 	}
+	
 	public void myUpdate() {
 		HtmlTagKit.processHtmlSpecialTag(this, "username", "firstname", "lastname");
 		this.update();

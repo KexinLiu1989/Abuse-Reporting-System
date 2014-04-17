@@ -1,16 +1,39 @@
 <fieldset class="solid">
 	<legend>User</legend>
 	<input type="hidden" name="user.id" value="${(user.id)!}" />
-	<div>
-		<label>Name</label>
-		<input type="text" name="user.username" value="${(user.username)!}" />
-	</div>
-	<div>
-		<label>Email</label>
-		<textarea name="user.email" cols="80" rows="10">${(user.email)!}</textarea>
-	</div>
-	<div>
-		<label>&nbsp;</label>
-		<input value="Submit" type="submit">
-	</div>
+	<table>
+		<tr>
+			<td><label>User Name</label></td>
+			<td><input type="text" name="user.username" value="${(user.username)!}" /></td>
+		</tr>
+		<tr>
+			<td><label>First Name</label></td>
+			<td><input type="text" name="user.firstname" value="${(user.firstname)!}" /></td>
+		</tr>
+		<tr>
+			<td><label>Last Name</label></td>
+			<td><input type="text" name="user.lastname" value="${(user.lastname)!}" /></td>
+		</tr>
+		<tr>
+			<td><label>Phone</label></td>
+			<td><input type="text" name="user.telephone" value="${(user.telephone)!}" /></td>
+		</tr>
+		<tr>
+			<td><label>Sex</label></td>
+			<td><input type="text" name="user.sex" value="${(user.sex)!}" /></td>
+		</tr>
+		<tr>
+			<td><label>Password</label></td>
+			<td><input  type="password" name="user.password" value="${(user.password)!}"/></td>
+		</tr>
+		<tr>
+			<td><label>Email</label></td>
+			<td><input  type="email" name="user.email" value="${(user.email)!}"/></td>
+		</tr>
+		<tr>
+			<td colspan="2">
+			<input value="Submit" type="submit">
+			</td>
+		</tr>			
+	</table>
 </fieldset>
